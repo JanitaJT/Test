@@ -30,6 +30,7 @@ export default function SubjectList() {
       <Box>
         <nav>
           {subjectList.map((value) => {
+            console.log(value);
             return (
               <List key={value.id}>
                 <ListItem disablePadding>

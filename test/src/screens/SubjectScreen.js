@@ -5,6 +5,7 @@ import { CardHeader, Card, Container } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
+import AddSubject from "../actions/AddSubject";
 
 export default function SubjectScreen() {
   const Card = styled(Paper)(({ theme }) => ({
@@ -15,6 +16,7 @@ export default function SubjectScreen() {
   return (
     <div>
       <Container maxWidth="100%">
+        <AddSubject />
         <Grid
           container
           rowSpacing={0.5}
