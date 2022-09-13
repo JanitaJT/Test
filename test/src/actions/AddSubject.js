@@ -29,7 +29,7 @@ export default function AddSubject() {
   };
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/api/get/programName").then((response) => {
+    Axios.get("http://localhost:3001/api/program/getNames").then((response) => {
       setProgramNameList(response.data);
     });
   }, []);
@@ -37,7 +37,7 @@ export default function AddSubject() {
   const addSubject = () => {
     console.log("tämä on subjectio jota yritetään lähettää ", newSubject);
     axios
-      .post("http://localhost:3001/api/post/addSubject", {
+      .post("http://localhost:3001/api/subject/post", {
         name: newSubject.name,
         groupSize: newSubject.groupSize,
         groupCount: newSubject.groupCount,

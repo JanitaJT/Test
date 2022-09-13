@@ -13,7 +13,7 @@ import { Typography } from "@mui/material";
 export default function SubjectList() {
   const [subjectList, setSubjectList] = useState([]);
   useEffect(() => {
-    Axios.get("http://localhost:3001/api/get/program").then((response) => {
+    Axios.get("http://localhost:3001/api/subject/getAll").then((response) => {
       setSubjectList(response.data);
     });
   }, []);
