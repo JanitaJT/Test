@@ -1,13 +1,19 @@
 const express = require("express");
 const subject = express.Router();
 const db = require("../db/index");
+const logger = require("../logger/logger");
 
 // Aineen kaikki tiedot sekä pääaineen id ja nimi
 subject.get("/getAll", (req, res) => {
   const sqlSelectSubjectProgram =
     "SELECT subject.id, subject.name AS subjectName, subject.groupSize, subject.groupCount, subject.sessionLength, subject.sessionCount, subject.area, subject.programId, program.name FROM Subject  JOIN Program ON subject.programId = program.id";
   db.query(sqlSelectSubjectProgram, (err, result) => {
-    res.send(result);
+    if (err) {
+      logger.error("Oops! Nothing came through from getAll - Subject.");
+    } else {
+      logger.http("It worked! At getAll - Subject");
+      res.send(result);
+    }
   });
 });
 
@@ -26,7 +32,13 @@ subject.post("/post", (req, res) => {
     sqlInsert,
     [name, groupSize, groupCount, sessionLength, sessionCount, area, programId],
     (err, result) => {
-      res.send(result);
+      if (err) {
+        logger.error("Oops! Create failed at /post - Subject");
+      } else {
+        logger.http("It worked! Create succsesfull. At post - Subject");
+        logger.info("Subject created");
+        res.send(result);
+      }
     }
   );
 });

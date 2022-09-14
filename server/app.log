@@ -1,0 +1,19 @@
+{"level":"info","message":"Running on port 3001"}
+{"level":"info","message":"Running on port 3001"}
+14-09-2022 12:33:51
+14-09-2022 12:35:56 - [INFO] - Running on port 3001
+14-09-2022 12:38:52 - [INFO] - Running on port 3001
+14-09-2022 13:19:28 - [INFO] - It worked! All program names and id:s came through
+14-09-2022 13:19:59 - [ERROR] - Oh no something went wrong
+14-09-2022 13:27:38 - [INFO] - It worked! All program names and id:s came through
+14-09-2022 13:37:18 - [INFO] - It worked! At getNames - Program
+14-09-2022 13:37:18 - [INFO] - It worked! At getAll - Subject
+14-09-2022 13:39:47 - [INFO] - It worked! Create succsesfull. At post - Subject
+14-09-2022 13:40:22 - [INFO] - It worked! At getNames - Program
+14-09-2022 13:40:22 - [INFO] - It worked! At getAll - Subject
+14-09-2022 13:40:59 - [INFO] - It worked! Create succsesfull. At post - Subject
+14-09-2022 13:49:50 - [INFO] - It worked! At getNames - Program
+14-09-2022 13:49:50 - [INFO] - It worked! At getAll - Subject
+14-09-2022 13:50:18 - [INFO] - It worked! At getAll - Subject
+14-09-2022 14:08:35 - [INFO] - Subject created: 
+14-09-2022 14:09:42 - [INFO] - Subject created: 

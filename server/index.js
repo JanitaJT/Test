@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
 const db = require("./db/index");
+const logger = require("./logger/logger");
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
