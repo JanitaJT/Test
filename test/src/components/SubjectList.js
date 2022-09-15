@@ -8,21 +8,25 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
+import axios from "axios";
 
 export default function SubjectList() {
   const [subjectList, setSubjectList] = useState([]);
+
   useEffect(() => {
     Axios.get("http://localhost:3001/api/subject/getAll").then((response) => {
       setSubjectList(response.data);
     });
   }, []);
 
+  const deleteSubject = (id) => {
+    axios.delete(`http://localhost:3001/api/subject/delete/${id}`);
+  };
+
   // STYLES
   const Box = styled(Paper)(({ theme }) => ({
-    // maxHeight: "350px",
     overflow: "auto",
-    // padding: "5px",
   }));
 
   return (
@@ -30,7 +34,6 @@ export default function SubjectList() {
       <Box>
         <nav>
           {subjectList.map((value) => {
-            console.log(value);
             return (
               <List key={value.id}>
                 <ListItem disablePadding>
@@ -145,6 +148,20 @@ export default function SubjectList() {
                         variant: "body2",
                       }}
                     ></ListItemText>
+                  </Grid>
+                  {/*HUOM! Delete toimii, mutta sivu pitää refreshaa jotta näkyy.
+                     Lisäks delete buttonin sijainti voi aiheuttaa ongelmia dialogin kanssa kun/ jos tulee kaksi hover päälleikkäin. Sama juttu update */}
+                  <Grid item md={3} xs={7} padding={2}>
+                    <ListItemText>
+                      {" "}
+                      <Button
+                        onClick={() => {
+                          deleteSubject(value.id);
+                        }}
+                      >
+                        Delete
+                      </Button>
+                    </ListItemText>
                   </Grid>
                 </ListItem>
                 <Divider />

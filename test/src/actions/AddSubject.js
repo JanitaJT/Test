@@ -56,10 +56,6 @@ export default function AddSubject() {
       });
   };
 
-  //   const Box = styled(Paper)(({ theme }) => ({
-  //     backgroundColor: "rgba(52, 139, 147, 0.5 )",
-  //   }));
-
   return (
     <div>
       <Container style={{ width: "50%", marginTop: "50px" }}>
