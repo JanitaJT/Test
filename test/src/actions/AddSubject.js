@@ -58,19 +58,19 @@ export default function AddSubject() {
 
   return (
     <div>
-      <Container style={{ width: "50%", marginTop: "50px" }}>
+      <Container style={{ width: "85%", marginTop: "50px" }}>
         <Box style={{ backgroundColor: "rgba(52, 139, 147, 0.5 )" }}>
           <div id="input-container">
             <Grid
               container
-              rowSpacing={2}
-              columnSpacing={1}
+              rowSpacing={4}
+              columnSpacing={5}
               column={6}
               justifyContent="space-evenly"
               alignItems="center"
               padding={1}
             >
-              <Grid item xs={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <TextField
                   name="name"
                   label="Aineen nimi"
@@ -79,7 +79,7 @@ export default function AddSubject() {
                   onChange={(e) => handleChange(e)}
                 ></TextField>
               </Grid>
-              <Grid item xs={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <TextField
                   name="groupSize"
                   label="Ryhmän koko"
@@ -88,7 +88,7 @@ export default function AddSubject() {
                   onChange={(e) => handleChange(e)}
                 ></TextField>
               </Grid>
-              <Grid item xs={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <TextField
                   name="groupCount"
                   label="Ryhmien määrä"
@@ -97,7 +97,7 @@ export default function AddSubject() {
                   onChange={(e) => handleChange(e)}
                 ></TextField>
               </Grid>
-              <Grid item xs={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <TextField
                   name="sessionLength"
                   label="Opetuksen pituus"
@@ -106,7 +106,7 @@ export default function AddSubject() {
                   onChange={(e) => handleChange(e)}
                 ></TextField>
               </Grid>
-              <Grid item xs={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <TextField
                   name="sessionCount"
                   label="Opetuksien määrä"
@@ -115,7 +115,7 @@ export default function AddSubject() {
                   onChange={(e) => handleChange(e)}
                 ></TextField>
               </Grid>
-              <Grid item xs={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <TextField
                   name="area"
                   label="Vaaditut neliömetrit"
@@ -125,7 +125,7 @@ export default function AddSubject() {
                 ></TextField>
               </Grid>
             </Grid>
-            <Grid item xs={4}>
+            <Grid>
               <FormControl sx={{ m: 4, minWidth: 120 }}>
                 <InputLabel>Pääaine</InputLabel>
                 <Select
@@ -145,7 +145,7 @@ export default function AddSubject() {
             </Grid>
           </div>
           <Grid item xs={3}>
-            <Button onClick={addSubject}>Lisää</Button>
+            <Button variant="outlined" size="large" onClick={addSubject}>Lisää</Button>
           </Grid>
         </Box>
       </Container>
